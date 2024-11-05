@@ -4,17 +4,24 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 // Conexão com o banco de dados MySQL
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host: 'localhost',
     user: 'root', // Substitua pelo seu usuário do MySQL
     password: '', // Substitua pela sua senha do MySQL
     database: 'noticias_db'
+});*/
+
+const db = mysql.createConnection({
+    host: 'sql10.freesqldatabase.com',
+    user: 'sql10742700', // Substitua pelo seu usuário do MySQL
+    password: 'GxK24vFi32', // Substitua pela sua senha do MySQL
+    database: 'sql10742700'
 });
 
 db.connect(err => {
@@ -94,6 +101,9 @@ app.delete('/noticias/:id', (req, res) => {
         res.json({ message: 'Notícia deletada com sucesso' });
     });
 });
+/********************* */
+/**- rotas para o portifólio */
+/********************* */
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
