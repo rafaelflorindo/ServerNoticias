@@ -47,7 +47,18 @@ app.post('/noticias', (req, res) => {
 
 // Ler todas as notícias
 app.get('/noticias', (req, res) => {
-    const query = 'SELECT * FROM noticias';
+    const query = 'SELECT * FROM noticias ORDER BY id DESC';
+    db.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json(results);
+    });
+});
+
+// Ler última notícia
+app.get('/noticias/ultimaNoticia', (req, res) => {
+    const query = 'SELECT * FROM noticias ORDER BY id DESC limit 1';
     db.query(query, (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
