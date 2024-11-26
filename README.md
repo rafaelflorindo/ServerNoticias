@@ -3,6 +3,11 @@
 O projeto SERVERNOTICIAS é uma API construída em Nodejs para uma versão de atividade acadêmica realizada com os alunos do 4º Semestre de ADS da Faculdades SENAC Maringá no ano de 2024. 
 Esta API está sendo consumida por dois projetos, um Web construido com o react (https://github.com/rafaelflorindo/GerenciamentoNoticiasReact) e outro em mobile (https://github.com/rafaelflorindo/GerenciamentoNoticiasReactNative) com o react-native.
 
+![Node Current](https://img.shields.io/node/v/express)
+
+
+
+
 ## Instalar as dependências
 Para executar o projeto é necessário realizar a instalação da dependências.
 
